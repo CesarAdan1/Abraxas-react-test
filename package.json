@@ -8,7 +8,7 @@
     "build": "webpack --config webpack.config.prod.js && cp _redirects dist",
     "dev": "webpack-dev-server --watch --config webpack.config.dev.js",
     "deploy": "aws s3 cp ./build s3://${S3BUCKET}/ --recursive",
-    "test": "NODE_ENV=test jest",
+    "test": "react-scripts test --env=jsdom",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage --colors",
     "eject": "react-scripts eject"
