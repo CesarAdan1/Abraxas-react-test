@@ -43,10 +43,7 @@ module.exports = {
         test: /\.(css|scss)$/i,
         use: [
           'style-loader', 
-          'css-loader',
-          {
-            loader: 'postcss-loader',
-          },
+          'css-loader'
         ]
       },
       {
