@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import { Home, Graphics, Tasks } from './components/Views';
+import { Home, Graphics, Tasks, CompletedTasks } from './components/Views';
 import  Header from './components/common/Header';
 
 const Routes = () => {
@@ -10,7 +10,8 @@ const Routes = () => {
         <Header />
         <Switch>
             <Route exact path="/" component={Home}/>
-            <Route exact path="/tareasencurso" component={Tasks}/>
+            <Route exact path="/pendientes" component={Tasks}/>
+            <Route exact path="/completadas" component={CompletedTasks}/>
             <Route exact path="/graficas" component={Graphics}/>
         </Switch>
         </>

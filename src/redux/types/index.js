@@ -4,3 +4,21 @@ export const OCULTAR_ALERTA = 'OCULTAR_ALERTA';
 export const SHOW_MENU_ITEMS = 'SHOW_MENU_ITEMS';
 export const SHOW_MENU_ERROR = 'SHOW_MENU_ERROR';
 export const SHOW_MENU_SUCCESSFUL = 'SHOW_MENU_SUCCESSFUL';
+
+//types of durations
+export const SHORT_DURATION = "SHORT_DURATION";
+export const MEDIUM_DURATION = "MEDIUM_DURATION";
+export const LONG_DURATION = "LONG_DURATION";
+export const USER_DURATION = "USER_DURATION";
+
+//task state
+export const TASK_IN_PROGRESS = 'TASK_IN_PROGRESS';
+export const TASK_IS_PAUSED = 'TASK_IS_PAUSED';
+export const TASK_IS_RELOAD = 'TASK_IS_RELOAD';
+export const TASK_IS_STOP_OR_PENDING = 'TASK_IS_STOP_OR_PENDING';
+
+//TASK TYPE constants
+export const LIST_TASKS_PENDING = 'LIST_TASKS_PENDING';
+export const LIST_TASKS_COMPLETED = 'LIST_TASKS_COMPLETED';
+
+export const GRAPHICS = 'GRAPHICS';

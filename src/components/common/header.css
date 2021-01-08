@@ -1,0 +1,33 @@
+.header-container{
+    display:flex;
+    width: 100%;
+    box-shadow: 0 0 1 black;
+    border-bottom: 0.5px solid #9F9FA1;
+}
+
+.header-content{
+    display:flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 4rem;
+    padding-left: 4rem;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.header_right_orientation{
+    display: flex;
+    width: 100%;
+    float: right;
+    margin-left: auto;
+}
+
+.header_right_cont{
+    margin-left: 10px;
+    float: right;
+}
+
+.header_right_li{
+    padding-left: 10px;
+    padding-right: 10px;
+}

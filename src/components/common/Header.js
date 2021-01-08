@@ -4,22 +4,24 @@ import './header.css';
 
 const Routes = [
     {
-        title: "Home",
-        path: "/"
+        title: "En Curso",
+        path: "/pendientes"
     },
     {
-        title: "Tareas en Curso",
-        path: "/tareasencurso"
+        title: "Completadas",
+        path: "/completadas"
     },
     {
-        title: "Graficas de Seguimiento",
+        title: "Seguimiento",
         path: "/graficas"
     }
   
 ];
 
-const HeaderLogo = ({ img_src, img_alt, link }) => {
-    return <div><Link to={link}><img src={img_src} alt={img_alt} /></Link></div>
+const HeaderLogo = ({ img_src, img_alt, link, linkName }) => {
+    return <div><Link to={link}><img src={img_src} alt={img_alt} />
+    {linkName}
+    </Link></div>
 }
 
 const HeaderRight = ({ title, path }) => {
@@ -40,6 +42,7 @@ const Header = () => {
         <div className="header-container">
             <header className="header-content">
                 <HeaderLogo 
+                    linkName="Inicio"
                     link="/"
                     src="https://raw.githubusercontent.com/CesarAdan1/Maniak-react-test/master/src/assets/bellotero.png"
                     alt="bellotero"
