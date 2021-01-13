@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --watch --config webpack.config.dev.js",
-    "build": "webpack --config webpack.config.prod.js && cp _redirects dist",
+    "build": "webpack --config webpack.config.prod.js",
     "dev": "webpack-dev-server --watch --config webpack.config.dev.js",
-    "deploy": "npm run build && aws s3 cp ./dist s3://http://testabraxas.s3-website-us-east-1.amazonaws.com --recursive",
+    "deploy": "npm run build && aws s3 cp ./dist s3://testabraxas --recursive",
     "test": "react-scripts test --env=jsdom",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage --colors",

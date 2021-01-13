@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { ModalAdd } from '../common/modal/ModalAdd';
 import './header.css';
 
 const Routes = [
@@ -20,7 +21,7 @@ const Routes = [
 
 const HeaderLogo = ({ img_src, img_alt, link, linkName }) => {
     return <div><Link to={link}><img src={img_src} alt={img_alt} />
-    {linkName}
+        {linkName}
     </Link></div>
 }
 
@@ -36,18 +37,22 @@ const HeaderRight = ({ title, path }) => {
 }
 
 const Header = () => {
-    const [colorMenuItem, setColorMenuItem] = useState(0);
+    const [openModal, setOpenModal] = useState(false);
+
+    const openModalAddTask = () => {
+        setOpenModal(!openModal)
+    }
 
     return (
         <div className="header-container">
             <header className="header-content">
+                <div className="header_right_orientation">
                 <HeaderLogo 
                     linkName="Inicio"
                     link="/"
                     src="https://raw.githubusercontent.com/CesarAdan1/Maniak-react-test/master/src/assets/bellotero.png"
                     alt="bellotero"
                 />
-                <div className="header_right_orientation">
                      {Routes.map((route, key) => {
                     const capitalizedName = route.title;
                     const path = route.path;
@@ -56,10 +61,14 @@ const Header = () => {
                             title={capitalizedName}
                             path={path}
                          /> 
-                    
                 })} 
                 </div>
+                <button 
+                    className="buttonAction"
+                    onClick={openModalAddTask}
+                >{`Añadir Tarea ${" "}${" "} ${"+"}`}</button>
             </header>
+            {openModal ? <ModalAdd/> : null}
         </div>
     )
 }

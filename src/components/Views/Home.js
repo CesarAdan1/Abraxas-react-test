@@ -10,10 +10,11 @@ const Home = () => {
                     taskName="Hacer Ejercicio"
                     taskDescription="Realizar ejercicio"
                     selectItem={
-                        <SelectTime/>
+                        <SelectTime
+                            titleNameLabelSelect="Selecciona un horario"
+                        />
                     }
                 />
-                <TaskItem />
             </TaskContainer>
         </div>
     )

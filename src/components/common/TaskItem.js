@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
-
+import {ModalEdit} from '../common/modal/ModalEdit';
+import {TimeArea} from './TimeArea';
 export function TaskItem({
     taskName, taskDescription, timeTask,
     openModalEdit, openModalDelete, selectItem
 }) {
 
-    const [status, setStatus] = useState(true);
-
-    function onClickChangePlayToPause() {
-        setStatus(!status)
-    }
+    const date = new Date();
 
     return (
         <div className="flex padding-cont width border-bottom margin-item">
@@ -32,30 +29,14 @@ export function TaskItem({
                 </div>
             </div>
             <div className="margin-sides flex left-orientation">
-                <div className="margin-sides">
-                    <label className="label text-center">Acciones</label>
-                    <div className="marginTop">
-                        <span onClick={onClickChangePlayToPause}>
-                            {status
-                                ? <i title="Pausar" className="fas fa-play"></i>
-                                : <i title="Iniciar" className="far fa-pause-circle"></i>
-                            }
-                        </span>
-                        <span title="Reiniciar">
-                            <i className="far fa-stop-circle"></i>
-                        </span>
-                        <span title="Detener">
-                            <i className="fas fa-sync-alt"></i>
-                        </span>
-                    </div>
-                </div>
+                {<TimeArea/>}
             </div>
             <div className="margin-sides">
                 <div>
                     <label className="label text-center">Duración</label>
                     <div className="marginTop">
-                        <span>
-                           {selectItem}
+                        <span className="pointer">
+                            {selectItem}
                         </span>
                     </div>
                 </div>
@@ -64,12 +45,12 @@ export function TaskItem({
                 <div className="flex column-flex">
                     <label className="label text-center">Opciones</label>
                     <div className="marginTop flex column-flex center-text">
-                        <div onClick={openModalEdit} className="marginTop margin-sides edit">
+                        <div onClick={openModalEdit} className="marginTop margin-sides edit pointer">
                             <span className="button-text center-text">
                                 Editar
                             </span>
                         </div>
-                        <div onClick={openModalDelete} className="margin-sides delete">
+                        <div onClick={openModalDelete} className="margin-sides delete pointer">
                             <span className="button-text center-text">
                                 Eliminar
                             </span>
@@ -80,3 +61,4 @@ export function TaskItem({
         </div>
     )
 }
+

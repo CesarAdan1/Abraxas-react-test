@@ -1,9 +1,9 @@
 import React from 'react';
 
-export const SelectTime = () => {
+export const SelectTime = ({titleNameLabelSelect}) => {
     return (
-        <select>
-            <option>
+        <select className="pointer">
+            <option className="pointer">
                 30 min
             </option>
             <option>
